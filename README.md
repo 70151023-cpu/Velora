@@ -43,7 +43,7 @@ The following HTML5 tags were implemented in this project:
 - HTML Living Standard: https://html.spec.whatwg.org/
 
 ## 👨‍💻 Author
-Your Name  
-Course: Web Development Lab  
-Instructor: (Instructor Name)  
-Date: (Submission Date)
+Haid Ali 
+Course: Web Engineering Lab  
+Instructor: Salman Irfan 
+Date: 27-02-2026
