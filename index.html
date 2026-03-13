@@ -1,134 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <a href="./index.html">Home</a><br>
-    <a href="./src/pages/about/about.html">About Us</a><br>
-    <a href="./src/pages/contact/contact.html">Contact Us</a><br>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center bg-teal-800 text-white p-4">
+    <div class="text-xl font-bold">MyWebsite</div>
+    <div class="space-x-4">
+      <a href="./index.html" class="hover:underline">Home</a>
+      <a href="./src/pages/about/about.html" class="hover:underline">About</a>
+      <a href="./src/pages/contact/contact.html" class="hover:underline">Contact</a>
+      <a href="./src/pages/signin/signin.html" class="hover:underline">Sign In</a>
+      <a href="./src/pages/signup/signup.html" class="hover:underline">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- IMAGES & CONTENT -->
+  <div class="p-4 text-center">
     <p>Check this image!</p>
-    <img src="https://tse4.mm.bing.net/th/id/OIP.qDvAlhidTBzXiGyDfq_O0gHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Image1"><br>
-    <img src="assets/images/pexels-martin-skerik-855863199-31018139.jpg" alt="Image2">
-    <h1>Web Engineering!</h1>
-    <h2>This is my first time working with HTML</h2>
-    <p>Welcome to our website! We are dedicated to providing useful information, engaging content, and a smooth browsing experience for every visitor. Explore our pages to learn more about what we offer and stay connected with our latest updates.</p>
-    <hr>
-    <ul>
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Mango</li>
-</ul>
-<ol>
-  <li>Step One</li>
-  <li>Step Two</li>
-  <li>Step Three</li>
-</ol>
-<li>Step One</li>
-  <li>Step Two</li>
-  <li>Step Three</li>
-  <br>
-  <audio controls>
-    <source src="assets/audios/Sickick-Infected.mp3" type="audio/mpeg">
-  </audio>
-  <br>
-  <video width="100" controls>
-  <source src="assets/videos/Sickick-Infected.mp4" type="video/mp4">
-</video>
-<br>
-<iframe 
-  src="https://www.google.com/maps?q=Lahore&output=embed"
-  width="400" 
-  height="300">
-</iframe>
-<br>
-<form>
-  Name: <input type="text"><br><br>
-  Email: <input type="email"><br><br>
-  Password: <input type="password"><br><br>
-  Gender:
-  <input type="radio" name="gender"> Male
-  <input type="radio" name="gender"> Female <br><br>
-  Hobbies:
-  <input type="checkbox"> Reading
-  <input type="checkbox"> Sports <br><br>
-  Upload File:
-  <input type="file"><br>
-  <input type="submit" value="Submit">
-</form>
-<br>
-<header>
-    <h1>My HTML5 Exploration Project</h1>
-    <nav>
-        <a href="#about">About</a> |
-        <a href="#features">Features</a>
-    </nav>
-</header>
+    <img class="mx-auto my-2 w-96"
+         src="https://tse4.mm.bing.net/th/id/OIP.qDvAlhidTBzXiGyDfq_O0gHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
+         alt="Image1">
+    <img class="mx-auto my-2 w-96"
+         src="assets/images/pexels-martin-skerik-855863199-31018139.jpg"
+         alt="Image2">
+    <h1 class="text-3xl font-bold mt-4">Web Engineering!</h1>
+    <h2 class="text-xl mt-2">This is my first time working with HTML</h2>
+    <p class="mt-2">Welcome to our website! Explore our pages to learn more about what we offer.</p>
+    <hr class="my-4">
+  </div>
 
-<section id="about">
-    <article>
-        <h2>About This Project</h2>
-        <p>This project explores <mark>modern HTML5 tags</mark>.</p>
-        <p>Created on <time datetime="2026-02-27">February 27, 2026</time></p>
-    </article>
-</section>
+  <!-- LAB 03: JS Variables Display (Step 2) -->
+  <div class="bg-white p-6 rounded-lg shadow-md w-11/12 md:w-3/4 mx-auto my-6">
+    <h2 class="text-2xl font-bold text-teal-800 mb-4">Project Variables</h2>
+    <div id="variableDisplay" class="text-gray-700 space-y-2"></div>
+  </div>
 
-<section id="features">
-    <article>
-        <h2>Highlighted Features</h2>
+  <!-- LAB 03: Button & Dynamic Output (Steps 4 & 5) -->
+  <div class="bg-white p-6 rounded-lg shadow-md w-11/12 md:w-3/4 mx-auto my-6">
+    <h2 class="text-2xl font-bold text-teal-800 mb-4">Project Summary</h2>
+    <button id="summaryBtn"
+      class="bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700 cursor-pointer font-semibold mb-4">
+      Show Project Summary
+    </button>
+    <div id="summaryResult" class="text-gray-700 space-y-2" style="display:none"></div>
+  </div>
 
-        <figure>
-            <img src="image.jpg" alt="Sample Image" width="200">
-            <figcaption>Figure 1: Example of figure and figcaption</figcaption>
-        </figure>
+  <!-- LISTS -->
+  <div class="p-4">
+    <ul class="list-disc list-inside">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Mango</li>
+    </ul>
+    <ol class="list-decimal list-inside mt-2">
+      <li>Step One</li>
+      <li>Step Two</li>
+      <li>Step Three</li>
+    </ol>
+  </div>
 
-        <details>
-            <summary>Click to Read More</summary>
-            <p>This section uses details and summary tags.</p>
-        </details>
+  <!-- AUDIO & VIDEO -->
+  <div class="p-4 text-center">
+    <audio controls class="my-2">
+      <source src="assets/audios/Sickick-Infected.mp3" type="audio/mpeg">
+    </audio>
+    <br>
+    <video controls class="my-2 w-72 md:w-96 mx-auto">
+      <source src="assets/videos/Sickick-Infected.mp4" type="video/mp4">
+    </video>
+    <iframe src="https://www.google.com/maps?q=Lahore&output=embed" class="w-full md:w-96 h-72 my-2 mx-auto"></iframe>
+  </div>
 
-        <p>Download progress:</p>
-        <progress value="70" max="100"></progress>
+  <!-- FORM -->
+  <form class="bg-white p-6 rounded-lg shadow-md w-11/12 md:w-96 mx-auto my-6">
+    <label class="block mb-2">Name:</label>
+    <input type="text" class="w-full p-2 border rounded mb-4">
 
-        <p>Skill Level:</p>
-        <meter value="0.8">80%</meter>
+    <label class="block mb-2">Email:</label>
+    <input type="email" class="w-full p-2 border rounded mb-4">
 
-        <blockquote cite="https://developer.mozilla.org/">
-            HTML is the standard markup language for web pages.
-        </blockquote>
+    <label class="block mb-2">Password:</label>
+    <input type="password" class="w-full p-2 border rounded mb-4">
 
-        <p><abbr title="HyperText Markup Language">HTML</abbr> is powerful.</p>
+    <div class="mb-4">
+      <span class="block mb-1">Gender:</span>
+      <label class="mr-2"><input type="radio" name="gender"> Male</label>
+      <label><input type="radio" name="gender"> Female</label>
+    </div>
 
-        <p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+    <div class="mb-4">
+      <span class="block mb-1">Hobbies:</span>
+      <label class="mr-2"><input type="checkbox"> Reading</label>
+      <label><input type="checkbox"> Sports</label>
+    </div>
 
-        <p>Example code: <code>&lt;section&gt;</code></p>
+    <label class="block mb-2">Upload File:</label>
+    <input type="file" class="w-full mb-4">
 
-        <form>
-            <fieldset>
-                <legend>Contact Form</legend>
-                <input list="browsers" name="browser">
-                <datalist id="browsers">
-                    <option value="Chrome">
-                    <option value="Firefox">
-                    <option value="Edge">
-                </datalist>
-                <br><br>
-                <output name="result">Submitted Successfully</output>
-            </fieldset>
-        </form>
+    <input type="submit" value="Submit" class="w-full p-2 bg-teal-600 text-white rounded hover:bg-teal-700 cursor-pointer">
+  </form>
 
-        <aside>
-            <p>This is sidebar content using aside tag.</p>
-        </aside>
+  <!-- BLOG GRID -->
+  <div class="grid grid-cols-5 gap-4 p-4 md:grid-rows-[auto]">
+    <div class="bg-teal-900 text-white p-4 col-span-5">Blog Header</div>
+    <div class="bg-gray-300 p-4 col-span-1 md:row-start-2">Sidebar<br>Categories</div>
+    <div class="bg-white p-4 col-span-4 md:row-start-2">Main Content<br>This is a blog article layout using CSS Grid.</div>
+    <div class="bg-teal-900 text-white p-4 col-span-5">Blog Footer</div>
+  </div>
 
-    </article>
-</section>
+  <!-- MENU GRID -->
+  <h2 class="text-center text-2xl font-bold my-4">Menu Section</h2>
+  <div class="grid grid-cols-3 gap-4 p-4">
+    <div class="bg-white p-4 text-center rounded hover:bg-teal-600 hover:text-white cursor-pointer">Burger</div>
+    <div class="bg-white p-4 text-center rounded hover:bg-teal-600 hover:text-white cursor-pointer">Pizza</div>
+    <div class="bg-white p-4 text-center rounded hover:bg-teal-600 hover:text-white cursor-pointer">Pasta</div>
+    <div class="bg-white p-4 text-center rounded hover:bg-teal-600 hover:text-white cursor-pointer">Sandwich</div>
+    <div class="bg-white p-4 text-center rounded hover:bg-teal-600 hover:text-white cursor-pointer">Fries</div>
+    <div class="bg-white p-4 text-center rounded hover:bg-teal-600 hover:text-white cursor-pointer">Coffee</div>
+  </div>
 
-<footer>
-    <p>© 2026 My Project | <cite>MDN Web Docs</cite></p>
-</footer>
-<br>
+  <!-- TABLE -->
+  <h2 class="text-center text-2xl font-bold my-4">Student Data</h2>
+  <table class="table-auto border-collapse border border-gray-400 w-11/12 md:w-3/4 mx-auto">
+    <thead>
+      <tr class="bg-teal-800 text-white">
+        <th class="border border-gray-400 p-2">Name</th>
+        <th class="border border-gray-400 p-2">Course</th>
+        <th class="border border-gray-400 p-2">Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white">
+        <td class="border border-gray-400 p-2 text-center">Ali</td>
+        <td class="border border-gray-400 p-2 text-center">Web Engineering</td>
+        <td class="border border-gray-400 p-2 text-center">88</td>
+      </tr>
+      <tr class="bg-white">
+        <td class="border border-gray-400 p-2 text-center">Ahmed</td>
+        <td class="border border-gray-400 p-2 text-center">Programming</td>
+        <td class="border border-gray-400 p-2 text-center">91</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <footer class="bg-teal-900 text-white text-center p-4 mt-6">
+    © 2026 My Project | <cite>MDN Web Docs</cite>
+  </footer>
+
+  <!-- SOCIAL FOOTER -->
+  <div class="bg-teal-900 text-white flex justify-center space-x-4 p-4">
+    <a href="#" class="hover:text-teal-400">Facebook</a>
+    <a href="#" class="hover:text-teal-400">Instagram</a>
+    <a href="#" class="hover:text-teal-400">Twitter</a>
+  </div>
+
+  <script src="./src/scripts/script.js"></script>
 </body>
 </html>
