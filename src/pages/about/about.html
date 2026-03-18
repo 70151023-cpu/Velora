@@ -1,13 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Velora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .accordion-content.open { max-height: 500px; }
+  </style>
 </head>
-<body>
-    <a href="../../../index.html">Home</a><br>
-    <a href="./about.html">About Us</a><br>
-    <a href="../contact/contact.html">Contact Us</a><br>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center bg-teal-800 text-white p-4">
+    <div class="text-xl font-bold">Velora</div>
+    <div class="space-x-4">
+      <a href="/index.html" class="hover:underline">Home</a>
+      <a href="./about.html" class="hover:underline font-bold underline">About</a>
+      <a href="../contact/contact.html" class="hover:underline">Contact</a>
+      <a href="../signin/signin.html" class="hover:underline">Sign In</a>
+      <a href="../signup/signup.html" class="hover:underline">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="bg-teal-800 text-white text-center py-16 px-4">
+    <h1 class="text-4xl font-bold mb-3">About Us</h1>
+    <p class="text-teal-200 text-lg max-w-xl mx-auto">Learn more about our journey, team, and what drives us forward.</p>
+  </section>
+
+  <!-- COMPONENT 1: STATISTICS -->
+  <section class="bg-white py-12 px-4">
+    <h2 class="text-center text-2xl font-bold text-teal-800 mb-8">Our Numbers</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+      <div class="bg-teal-50 rounded-lg p-6 shadow">
+        <p class="text-4xl font-bold text-teal-700">120+</p>
+        <p class="text-gray-600 mt-1">Projects Completed</p>
+      </div>
+      <div class="bg-teal-50 rounded-lg p-6 shadow">
+        <p class="text-4xl font-bold text-teal-700">85</p>
+        <p class="text-gray-600 mt-1">Happy Clients</p>
+      </div>
+      <div class="bg-teal-50 rounded-lg p-6 shadow">
+        <p class="text-4xl font-bold text-teal-700">12</p>
+        <p class="text-gray-600 mt-1">Team Members</p>
+      </div>
+      <div class="bg-teal-50 rounded-lg p-6 shadow">
+        <p class="text-4xl font-bold text-teal-700">4</p>
+        <p class="text-gray-600 mt-1">Years of Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 2: TIMELINE -->
+  <section class="bg-gray-50 py-12 px-4">
+    <h2 class="text-center text-2xl font-bold text-teal-800 mb-10">Our Journey</h2>
+    <div class="max-w-2xl mx-auto relative">
+      <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-teal-300"></div>
+
+      <div class="relative flex items-start mb-8 pl-14">
+        <div class="absolute left-3 w-5 h-5 bg-teal-600 rounded-full border-4 border-white shadow"></div>
+        <div class="bg-white rounded-lg shadow p-4 w-full">
+          <p class="text-xs text-teal-500 font-semibold uppercase tracking-wide">2021</p>
+          <h3 class="font-bold text-gray-800 mt-1">Company Founded</h3>
+          <p class="text-sm text-gray-600 mt-1">Started with a small team of 3 passionate developers building web solutions.</p>
+        </div>
+      </div>
+
+      <div class="relative flex items-start mb-8 pl-14">
+        <div class="absolute left-3 w-5 h-5 bg-teal-600 rounded-full border-4 border-white shadow"></div>
+        <div class="bg-white rounded-lg shadow p-4 w-full">
+          <p class="text-xs text-teal-500 font-semibold uppercase tracking-wide">2022</p>
+          <h3 class="font-bold text-gray-800 mt-1">First Major Client</h3>
+          <p class="text-sm text-gray-600 mt-1">Landed our first enterprise client, expanding the team to 6 members.</p>
+        </div>
+      </div>
+
+      <div class="relative flex items-start mb-8 pl-14">
+        <div class="absolute left-3 w-5 h-5 bg-teal-600 rounded-full border-4 border-white shadow"></div>
+        <div class="bg-white rounded-lg shadow p-4 w-full">
+          <p class="text-xs text-teal-500 font-semibold uppercase tracking-wide">2023</p>
+          <h3 class="font-bold text-gray-800 mt-1">Product Launch</h3>
+          <p class="text-sm text-gray-600 mt-1">Launched our flagship SaaS product with over 500 sign-ups in the first month.</p>
+        </div>
+      </div>
+
+      <div class="relative flex items-start pl-14">
+        <div class="absolute left-3 w-5 h-5 bg-teal-400 rounded-full border-4 border-white shadow"></div>
+        <div class="bg-white rounded-lg shadow p-4 w-full">
+          <p class="text-xs text-teal-500 font-semibold uppercase tracking-wide">2026</p>
+          <h3 class="font-bold text-gray-800 mt-1">Today & Beyond</h3>
+          <p class="text-sm text-gray-600 mt-1">Growing strong with 12 team members and expanding to new markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 3: TEAM SECTION -->
+  <section class="bg-white py-12 px-4">
+    <h2 class="text-center text-2xl font-bold text-teal-800 mb-8">Meet the Team</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="bg-gray-50 rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+        <div class="w-20 h-20 rounded-full bg-teal-200 mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-teal-800">H</div>
+        <h3 class="font-bold text-lg">Haid Ali</h3>
+        <p class="text-teal-600 text-sm">Lead Developer</p>
+        <p class="text-gray-500 text-xs mt-2">Specializes in full-stack web development and system architecture.</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+        <div class="w-20 h-20 rounded-full bg-teal-200 mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-teal-800">S</div>
+        <h3 class="font-bold text-lg">Sara Khan</h3>
+        <p class="text-teal-600 text-sm">UI/UX Designer</p>
+        <p class="text-gray-500 text-xs mt-2">Creates intuitive and beautiful user interfaces with a user-first approach.</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+        <div class="w-20 h-20 rounded-full bg-teal-200 mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-teal-800">U</div>
+        <h3 class="font-bold text-lg">Usman Malik</h3>
+        <p class="text-teal-600 text-sm">Backend Engineer</p>
+        <p class="text-gray-500 text-xs mt-2">Builds scalable APIs and manages databases and cloud infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 4: TESTIMONIALS -->
+  <section class="bg-teal-800 text-white py-12 px-4">
+    <h2 class="text-center text-2xl font-bold mb-8">What Clients Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="bg-teal-700 rounded-lg p-6 shadow">
+        <p class="text-teal-100 italic mb-4">"Working with this team was an absolute pleasure. They delivered on time and exceeded our expectations."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-teal-400 flex items-center justify-center font-bold">R</div>
+          <div>
+            <p class="font-semibold">Rania Tariq</p>
+            <p class="text-teal-300 text-xs">CEO, TechStart</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-teal-700 rounded-lg p-6 shadow">
+        <p class="text-teal-100 italic mb-4">"Incredible attention to detail. The website they built for us tripled our online conversions."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-teal-400 flex items-center justify-center font-bold">K</div>
+          <div>
+            <p class="font-semibold">Kamran Butt</p>
+            <p class="text-teal-300 text-xs">Founder, ShopEase</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 5: ACCORDION -->
+  <section class="bg-gray-50 py-12 px-4">
+    <h2 class="text-center text-2xl font-bold text-teal-800 mb-8">Frequently Asked Questions</h2>
+    <div class="max-w-2xl mx-auto space-y-3">
+
+      <div class="bg-white rounded-lg shadow">
+        <button onclick="toggleAccordion(this)" class="w-full text-left p-4 font-semibold text-gray-800 flex justify-between items-center">
+          What services do you offer?
+          <span class="text-teal-600 text-xl">+</span>
+        </button>
+        <div class="accordion-content px-4">
+          <p class="text-gray-600 text-sm pb-4">We offer web development, UI/UX design, API integration, cloud deployment, and ongoing maintenance services.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow">
+        <button onclick="toggleAccordion(this)" class="w-full text-left p-4 font-semibold text-gray-800 flex justify-between items-center">
+          How long does a typical project take?
+          <span class="text-teal-600 text-xl">+</span>
+        </button>
+        <div class="accordion-content px-4">
+          <p class="text-gray-600 text-sm pb-4">Most projects range from 2 to 8 weeks depending on scope and complexity. We provide a detailed timeline after the initial consultation.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow">
+        <button onclick="toggleAccordion(this)" class="w-full text-left p-4 font-semibold text-gray-800 flex justify-between items-center">
+          Do you provide post-launch support?
+          <span class="text-teal-600 text-xl">+</span>
+        </button>
+        <div class="accordion-content px-4">
+          <p class="text-gray-600 text-sm pb-4">Yes! We offer 3 months of free post-launch support and optional maintenance packages beyond that.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow">
+        <button onclick="toggleAccordion(this)" class="w-full text-left p-4 font-semibold text-gray-800 flex justify-between items-center">
+          How do we get started?
+          <span class="text-teal-600 text-xl">+</span>
+        </button>
+        <div class="accordion-content px-4">
+          <p class="text-gray-600 text-sm pb-4">Simply reach out via our Contact page and we'll schedule a free 30-minute discovery call to discuss your needs.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-teal-900 text-white text-center p-4 mt-6">
+    © 2026 Velora. All rights reserved.
+  </footer>
+  <div class="bg-teal-900 text-white flex justify-center space-x-4 p-4">
+    <a href="#" class="hover:text-teal-400">Facebook</a>
+    <a href="#" class="hover:text-teal-400">Instagram</a>
+    <a href="#" class="hover:text-teal-400">Twitter</a>
+  </div>
+
+  <script>
+    function toggleAccordion(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('span');
+      content.classList.toggle('open');
+      icon.textContent = content.classList.contains('open') ? '−' : '+';
+    }
+  </script>
 </body>
 </html>

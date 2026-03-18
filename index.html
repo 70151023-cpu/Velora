@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Velora</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
 
   <!-- NAVBAR -->
   <nav class="flex justify-between items-center bg-teal-800 text-white p-4">
-    <div class="text-xl font-bold">MyWebsite</div>
+    <div class="text-xl font-bold">Velora</div>
     <div class="space-x-4">
       <a href="./index.html" class="hover:underline">Home</a>
       <a href="./src/pages/about/about.html" class="hover:underline">About</a>
@@ -20,28 +20,34 @@
     </div>
   </nav>
 
-  <!-- IMAGES & CONTENT -->
-  <div class="p-4 text-center">
-    <p>Check this image!</p>
-    <img class="mx-auto my-2 w-96"
-         src="https://tse4.mm.bing.net/th/id/OIP.qDvAlhidTBzXiGyDfq_O0gHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
-         alt="Image1">
-    <img class="mx-auto my-2 w-96"
-         src="assets/images/pexels-martin-skerik-855863199-31018139.jpg"
-         alt="Image2">
-    <h1 class="text-3xl font-bold mt-4">Web Engineering!</h1>
-    <h2 class="text-xl mt-2">This is my first time working with HTML</h2>
-    <p class="mt-2">Welcome to our website! Explore our pages to learn more about what we offer.</p>
-    <hr class="my-4">
-  </div>
+  <!-- HERO SECTION -->
+  <section class="bg-teal-800 text-white py-20 px-6 text-center">
+    <h1 class="text-5xl font-extrabold mb-4 leading-tight">Welcome to <span class="text-teal-300">Velora</span></h1>
+    <p class="text-teal-100 text-lg max-w-xl mx-auto mb-8">Your one-stop platform for modern web experiences. Explore, connect, and build something amazing.</p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="./src/pages/signup/signup.html"
+        class="bg-white text-teal-800 font-semibold px-6 py-3 rounded-lg hover:bg-teal-100 transition">
+        Get Started
+      </a>
+      <a href="./src/pages/about/about.html"
+        class="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-teal-700 transition">
+        Learn More
+      </a>
+    </div>
+    <div class="mt-10">
+      <img class="mx-auto rounded-xl shadow-lg w-96"
+           src="https://tse4.mm.bing.net/th/id/OIP.qDvAlhidTBzXiGyDfq_O0gHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
+           alt="Hero Image">
+    </div>
+  </section>
 
-  <!-- LAB 03: JS Variables Display (Step 2) -->
+  <!-- JS Variables Display -->
   <div class="bg-white p-6 rounded-lg shadow-md w-11/12 md:w-3/4 mx-auto my-6">
     <h2 class="text-2xl font-bold text-teal-800 mb-4">Project Variables</h2>
     <div id="variableDisplay" class="text-gray-700 space-y-2"></div>
   </div>
 
-  <!-- LAB 03: Button & Dynamic Output (Steps 4 & 5) -->
+  <!-- Project Summary Button -->
   <div class="bg-white p-6 rounded-lg shadow-md w-11/12 md:w-3/4 mx-auto my-6">
     <h2 class="text-2xl font-bold text-teal-800 mb-4">Project Summary</h2>
     <button id="summaryBtn"
@@ -65,16 +71,9 @@
     </ol>
   </div>
 
-  <!-- AUDIO & VIDEO -->
+  <!-- MAP -->
   <div class="p-4 text-center">
-    <audio controls class="my-2">
-      <source src="assets/audios/Sickick-Infected.mp3" type="audio/mpeg">
-    </audio>
-    <br>
-    <video controls class="my-2 w-72 md:w-96 mx-auto">
-      <source src="assets/videos/Sickick-Infected.mp4" type="video/mp4">
-    </video>
-    <iframe src="https://www.google.com/maps?q=Lahore&output=embed" class="w-full md:w-96 h-72 my-2 mx-auto"></iframe>
+    <iframe src="https://www.google.com/maps?q=University+of+Lahore&output=embed" class="w-full md:w-96 h-72 my-2 mx-auto rounded-lg shadow"></iframe>
   </div>
 
   <!-- FORM -->
@@ -107,7 +106,7 @@
   </form>
 
   <!-- BLOG GRID -->
-  <div class="grid grid-cols-5 gap-4 p-4 md:grid-rows-[auto]">
+  <div class="grid grid-cols-5 gap-4 p-4">
     <div class="bg-teal-900 text-white p-4 col-span-5">Blog Header</div>
     <div class="bg-gray-300 p-4 col-span-1 md:row-start-2">Sidebar<br>Categories</div>
     <div class="bg-white p-4 col-span-4 md:row-start-2">Main Content<br>This is a blog article layout using CSS Grid.</div>
@@ -151,10 +150,8 @@
 
   <!-- FOOTER -->
   <footer class="bg-teal-900 text-white text-center p-4 mt-6">
-    © 2026 My Project | <cite>MDN Web Docs</cite>
+    © 2026 Velora. All rights reserved.
   </footer>
-
-  <!-- SOCIAL FOOTER -->
   <div class="bg-teal-900 text-white flex justify-center space-x-4 p-4">
     <a href="#" class="hover:text-teal-400">Facebook</a>
     <a href="#" class="hover:text-teal-400">Instagram</a>

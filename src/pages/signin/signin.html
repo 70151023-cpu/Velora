@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In - MyWebsite</title>
+  <title>Sign In - Velora</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
 
   <!-- NAVBAR -->
   <nav class="flex justify-between items-center bg-teal-800 text-white p-4">
-    <div class="text-xl font-bold">MyWebsite</div>
+    <div class="text-xl font-bold">Velora</div>
     <div class="space-x-4">
-      <a href="../../index.html" class="hover:underline">Home</a>
+      <a href="/index.html" class="hover:underline">Home</a>
       <a href="../about/about.html" class="hover:underline">About</a>
       <a href="../contact/contact.html" class="hover:underline">Contact</a>
+      <a href="../signin/signin.html" class="hover:underline font-bold underline">Sign In</a>
+      <a href="../signup/signup.html" class="hover:underline">Sign Up</a>
     </div>
   </nav>
 
@@ -24,7 +26,6 @@
       <h1 class="text-2xl font-bold text-teal-800 mb-1">Sign In</h1>
       <p class="text-gray-500 text-sm mb-6">Welcome back! Please enter your credentials.</p>
 
-      <!-- Feedback message -->
       <div id="signinMessage" class="hidden bg-teal-50 border border-teal-300 text-teal-800 p-3 rounded mb-4 text-sm"></div>
 
       <form id="signinForm" class="space-y-4">
@@ -57,7 +58,7 @@
 
   <!-- FOOTER -->
   <footer class="bg-teal-900 text-white text-center p-4">
-    © 2026 MyWebsite
+    © 2026 Velora. All rights reserved.
   </footer>
 
   <script src="../../src/scripts/script.js"></script>
