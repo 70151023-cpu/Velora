@@ -1,49 +1,23 @@
-# HTML5 Advanced Tags Lab Project
+# Velora
 
-## 📌 Project Overview
-This project demonstrates the use of 20+ advanced HTML5 tags that were explored independently using MDN Web Docs and official HTML documentation.
+A multi-page responsive website developed as part of the Web Engineering course at the University of Lahore.
 
-The purpose of this lab is to understand semantic structure, interactive elements, and modern HTML features beyond basic tags.
+## Pages
+- **Home** — Hero section, project summary, blog grid, menu grid, and student data table
+- **About** — Statistics, timeline, team section, testimonials, and FAQ accordion
+- **Contact** — Contact form with Formspree integration and form validation
+- **Sign In** — Login form with client-side validation
+- **Sign Up** — Registration form with password match validation
 
-## 🚀 Tags Explored
-The following HTML5 tags were implemented in this project:
+## Built With
+- HTML5
+- Tailwind CSS
+- Flowbite Component Library
+- JavaScript (ES6)
+- Formspree (form submission)
 
-- <article>
-- <section>
-- <nav>
-- <header>
-- <footer>
-- <aside>
-- <figure>
-- <figcaption>
-- <mark>
-- <time>
-- <progress>
-- <meter>
-- <details>
-- <summary>
-- <abbr>
-- <blockquote>
-- <cite>
-- <code>
-- <kbd>
-- <output>
-- <datalist>
-- <fieldset>
-- <legend>
+## Live Demo
+[View Live Site](YOUR_GITHUB_PAGES_LINK_HERE)
 
-## 🎯 Objectives
-- Practice semantic HTML structure
-- Improve webpage organization
-- Use interactive and modern HTML elements
-- Follow official documentation standards
-
-## 📚 References
-- MDN Web Docs: https://developer.mozilla.org/
-- HTML Living Standard: https://html.spec.whatwg.org/
-
-## 👨‍💻 Author
-Haid Ali 
-Course: Web Engineering Lab  
-Instructor: Salman Irfan 
-Date: 27-02-2026
+## Developer
+**Haid Ali** — BSCS, Spring 2026, University of Lahore
