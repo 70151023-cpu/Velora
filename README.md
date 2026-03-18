@@ -17,7 +17,7 @@ A multi-page responsive website developed as part of the Web Engineering course 
 - Formspree (form submission)
 
 ## Live Demo
-[View Live Site](YOUR_GITHUB_PAGES_LINK_HERE)
+[View Live Site]([YOUR_GITHUB_PAGES_LINK_HERE](https://70151023-cpu.github.io/Velora/))
 
 ## Developer
 **Haid Ali** — BSCS, Spring 2026, University of Lahore
