@@ -80,21 +80,28 @@ if (contactForm) {
   });
 }
 
-// ── Sign In validation ───────────────────────────────────────
+// ── Sign In ──────────────────────────────────────────────────
 
 const signinForm = document.getElementById("signinForm");
 if (signinForm) {
   signinForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = document.getElementById("signinEmail").value;
-    const pass  = document.getElementById("signinPass").value;
-    const msg   = document.getElementById("signinMessage");
+
+    const email       = document.getElementById("signinEmail").value.trim();
+    const pass        = document.getElementById("signinPass").value.trim();
+    const msg         = document.getElementById("signinMessage");
+    const formSection = document.getElementById("formSection");
+    const successSection = document.getElementById("successSection");
+    const successEmail   = document.getElementById("successEmail");
+
+
+    msg.classList.add("hidden");
+    msg.textContent = "";
+
     if (!email || !pass) {
       msg.textContent = "Please fill in all fields.";
       msg.classList.remove("hidden");
-    } else {
-      msg.textContent = `Welcome back, ${email}!`;
-      msg.classList.remove("hidden");
+      return;
     }
   });
 }
