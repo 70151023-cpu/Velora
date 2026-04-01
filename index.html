@@ -5,20 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velora</title>
   <script src="https://cdn.tailwindcss.com"></script>
+<style>
+body.dark { background: #0f172a !important; color: #f1f5f9 !important; }
+.dark .bg-teal-800 { background: #0d9488 !important; }
+.dark .bg-white { background: #1e293b !important; }
+.dark .text-gray-600 { color: #94a3b8 !important; }
+.dark .bg-gray-100 { background: #334155 !important; }
+.dark input, .dark select { background: #1e293b !important; color: #f1f5f9 !important; }
+</style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
-
   <!-- NAVBAR -->
-  <nav class="flex justify-between items-center bg-teal-800 text-white p-4">
+<nav class="flex justify-between items-center bg-teal-800 text-white p-4 sticky top-0 z-40">
+  <div class="flex items-center space-x-3">
     <div class="text-xl font-bold">Velora</div>
-    <div class="space-x-4">
-      <a href="./index.html" class="hover:underline">Home</a>
-      <a href="./src/pages/about/about.html" class="hover:underline">About</a>
-      <a href="./src/pages/contact/contact.html" class="hover:underline">Contact</a>
-      <a href="./src/pages/signin/signin.html" class="hover:underline">Sign In</a>
-      <a href="./src/pages/signup/signup.html" class="hover:underline">Sign Up</a>
-    </div>
-  </nav>
+    <button id="themeToggle" class="p-1.5 rounded-full bg-teal-600 hover:bg-teal-700 text-white transition-all">🌙</button>
+  </div>
+  <div class="space-x-4">
+    <a href="./index.html" class="hover:underline">Home</a>
+    <a href="./src/pages/about/about.html" class="hover:underline">About</a>
+    <a href="./src/pages/contact/contact.html" class="hover:underline">Contact</a>
+    <a href="./src/pages/signin/signin.html" class="hover:underline">Sign In</a>
+    <a href="./src/pages/signup/signup.html" class="hover:underline">Sign Up</a>
+  </div>
+</nav>
 
   <!-- HERO SECTION -->
   <section class="bg-teal-800 text-white py-20 px-6 text-center">
@@ -119,6 +129,50 @@
     <div id="summaryResult" class="text-gray-700 space-y-2" style="display:none"></div>
   </div>
 
+  <section class="py-12 px-4 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold text-teal-800 mb-6 text-center">Project Service Dashboard</h2>
+
+  <div class="bg-white p-6 rounded-lg shadow-sm mb-8 flex flex-wrap gap-4 justify-center">
+    <input type="text" id="searchInput" placeholder="Search by name..." class="p-2 border rounded-lg w-64">
+    <select id="catFilter" class="p-2 border rounded-lg"><option value="all">All Categories</option><option value="Design">Design</option><option value="Dev">Dev</option></select>
+    <select id="priceFilter" class="p-2 border rounded-lg"><option value="all">Price Range</option><option value="low">Under $150</option><option value="high">$150+</option></select>
+    <select id="statusFilter" class="p-2 border rounded-lg"><option value="all">Status</option><option value="Active">Active</option><option value="Pending">Pending</option></select>
+    <select id="sortFilter" class="p-2 border rounded-lg"><option value="asc">Price Low-High</option>
+    <select id="limitFilter" class="p-2 border rounded-lg"><option value="all">Display Limit</option><option value="3">Show 3</option></select>
+  </div>
+
+  <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"></div>
+
+  <div class="bg-white p-8 rounded-lg shadow-md max-w-xl mx-auto mb-10">
+    <h3 class="text-xl font-bold mb-4 text-teal-700">Add New Service</h3>
+    <form id="addServiceForm" class="space-y-4">
+      <input type="text" id="newName" placeholder="Service Name" class="w-full p-2 border rounded" required>
+      <input type="number" id="newPrice" placeholder="Price" class="w-full p-2 border rounded" required>
+      <select id="newCat" class="w-full p-2 border rounded">
+        <option value="Design">Design</option>
+        <option value="Dev">Dev</option>
+        <option value="Marketing">Marketing</option>
+      </select>
+      <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded">Add to Array</button>
+    </form>
+  </div>
+
+  <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div class="bg-white p-6 rounded-lg w-full max-w-md">
+      <h3 class="text-lg font-bold mb-4">Edit Service</h3>
+      <input type="hidden" id="editId">
+      <input type="text" id="editName" class="w-full p-2 border mb-3">
+      <input type="number" id="editPrice" class="w-full p-2 border mb-3">
+      <div class="flex gap-2">
+        <button onclick="updateService()" class="bg-teal-600 text-white px-4 py-2 rounded">Update</button>
+        <button onclick="closeModal()" class="bg-gray-400 text-white px-4 py-2 rounded">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="tableOutput" class="mt-10 overflow-x-auto"></div>
+  <div id="whileOutput" class="mt-6 p-4 bg-teal-50 rounded"></div>
+</section>
 
   <!-- FOOTER -->
   <footer class="bg-teal-900 text-white text-center p-4 mt-6">
@@ -201,6 +255,27 @@
   <div class="bg-white p-4 col-span-4 md:row-start-2">Main Content<br>This is a blog article layout using CSS Grid.</div>
   <div class="bg-teal-900 text-white p-4 col-span-5">Blog Footer</div>
 </div> -->
-  <script src="./src/scripts/script.js"></script>
+<script>
+/* THEME TOGGLE */
+(() => {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  
+  const applyTheme = (dark) => {
+    document.body.classList.toggle('dark', dark);
+    btn.textContent = dark ? '☀️' : '🌙';
+  };
+  
+  const saved = localStorage.theme === 'dark';
+  applyTheme(saved);
+  
+  btn.onclick = () => {
+    const dark = !document.body.classList.contains('dark');
+    localStorage.theme = dark ? 'dark' : 'light';
+    applyTheme(dark);
+  };
+})();
+</script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

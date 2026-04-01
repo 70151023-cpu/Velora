@@ -5,20 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up - Velora</title>
   <script src="https://cdn.tailwindcss.com"></script>
+<style>
+body.dark { background: #0f172a !important; color: #f1f5f9 !important; }
+.dark .bg-teal-800 { background: #0d9488 !important; }
+.dark .bg-white { background: #1e293b !important; }
+.dark .text-gray-600 { color: #94a3b8 !important; }
+.dark .bg-gray-100 { background: #334155 !important; }
+.dark input, .dark select { background: #1e293b !important; color: #f1f5f9 !important; }
+</style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
-
   <!-- NAVBAR -->
-  <nav class="flex justify-between items-center bg-teal-800 text-white p-4">
+<nav class="flex justify-between items-center bg-teal-800 text-white p-4 sticky top-0 z-40">
+  <div class="flex items-center space-x-3">
     <div class="text-xl font-bold">Velora</div>
-    <div class="space-x-4">
-      <a href="../../../index.html" class="hover:underline">Home</a>
-      <a href="../about/about.html" class="hover:underline">About</a>
-      <a href="../contact/contact.html" class="hover:underline">Contact</a>
-      <a href="../signin/signin.html" class="hover:underline">Sign In</a>
-      <a href="../signup/signup.html" class="hover:underline font-bold underline">Sign Up</a>
-    </div>
-  </nav>
+    <button id="themeToggle" class="p-1.5 rounded-full bg-teal-600 hover:bg-teal-700 text-white transition-all">🌙</button>
+  </div>
+  <div class="space-x-4">
+    <a href="../../../index.html" class="hover:underline">Home</a>
+    <a href="../about/about.html" class="hover:underline">About</a>
+    <a href="../contact/contact.html" class="hover:underline">Contact</a>
+    <a href="../signin/signin.html" class="hover:underline">Sign In</a>
+    <a href="./signup.html" class="hover:underline font-bold">Sign Up</a>
+  </div>
+</nav>
 
   <!-- SIGN UP FORM -->
   <div class="flex-1 flex items-center justify-center p-6">
@@ -68,7 +78,27 @@
   <footer class="bg-teal-900 text-white text-center p-4">
     © 2026 Velora. All rights reserved.
   </footer>
-
-  <script src="../../src/scripts/script.js"></script>
+<script>
+/* THEME TOGGLE */
+(() => {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  
+  const applyTheme = (dark) => {
+    document.body.classList.toggle('dark', dark);
+    btn.textContent = dark ? '☀️' : '🌙';
+  };
+  
+  const saved = localStorage.theme === 'dark';
+  applyTheme(saved);
+  
+  btn.onclick = () => {
+    const dark = !document.body.classList.contains('dark');
+    localStorage.theme = dark ? 'dark' : 'light';
+    applyTheme(dark);
+  };
+})();
+</script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
